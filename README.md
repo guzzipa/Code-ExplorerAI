@@ -18,4 +18,4 @@ OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX GITHUB_TOKEN=ghp_XXXX
 ```bash pip install -r requirements.txt```
 
 3. corre el Script 
-python script.py
+python main.py
