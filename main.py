@@ -23,12 +23,12 @@ token = os.getenv("GITHUB_TOKEN")
 if not token:
     raise ValueError("Falta el token GITHUB_TOKEN en las variables de entorno.")
 
-repo_path = "avatarify-python/"
+repo_path = "TheAlgorithms-Python/"
 
 # Verificar si el repositorio ya está clonado
 if not os.path.exists(os.path.join(repo_path, ".git")):
     print("Repositorio no clonado, clonando ahora...")
-    Repo.clone_from(f"https://{token}@github.com/guzzipa/avatarify-python", repo_path)
+    Repo.clone_from(f"https://{token}@github.com/TheAlgorithms/Python", repo_path)
 else:
     print("El repositorio ya está clonado, usando el existente.")
 
