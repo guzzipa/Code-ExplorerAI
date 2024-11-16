@@ -10,6 +10,7 @@ Este proyecto utiliza LangChain para analizar repositorios Git y realizar consul
 
 ## Configuración
 1. Crea un archivo `.env` con las siguientes claves:
+
 OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX GITHUB_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
