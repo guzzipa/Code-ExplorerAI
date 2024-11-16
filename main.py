@@ -15,7 +15,6 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 token = os.getenv("GITHUB_TOKEN")
 
-
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("Falta la clave OPENAI_API_KEY en las variables de entorno.")
@@ -24,14 +23,12 @@ token = os.getenv("GITHUB_TOKEN")
 if not token:
     raise ValueError("Falta el token GITHUB_TOKEN en las variables de entorno.")
 
-
-
-repo_path = "uala-dataml-cumple_new/"
+repo_path = "avatarify-python/"
 
 # Verificar si el repositorio ya está clonado
 if not os.path.exists(os.path.join(repo_path, ".git")):
     print("Repositorio no clonado, clonando ahora...")
-    Repo.clone_from(f"https://{token}@github.com/Bancar/uala-dataml-cumple.git", repo_path)
+    Repo.clone_from(f"https://{token}@github.com/guzzipa/avatarify-python", repo_path)
 else:
     print("El repositorio ya está clonado, usando el existente.")
 
@@ -80,7 +77,7 @@ qa = ConversationalRetrievalChain.from_llm(
 )
 
 # Realizar una pregunta
-question = "que es lo que sabes ? podes sugerir cambios mejoras o nuevos features para este codigo ? "
+question = "resumi lo que sepas del repo "
 result = qa(question)
 print(result['answer'])
 
