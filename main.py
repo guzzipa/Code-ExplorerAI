@@ -23,12 +23,12 @@ token = os.getenv("GITHUB_TOKEN")
 if not token:
     raise ValueError("Falta el token GITHUB_TOKEN en las variables de entorno.")
 
-repo_path = "TheAlgorithms-Python/"
+repo_path = "virtual-board/"
 
 # Verificar si el repositorio ya está clonado
 if not os.path.exists(os.path.join(repo_path, ".git")):
     print("Repositorio no clonado, clonando ahora...")
-    Repo.clone_from(f"https://{token}@github.com/TheAlgorithms/Python", repo_path)
+    Repo.clone_from(f"https://{token}@github.com/guzzipa/virtual-board.git", repo_path)
 else:
     print("El repositorio ya está clonado, usando el existente.")
 
@@ -59,8 +59,6 @@ texts = documents_splitter.split_documents(documents)
 #embeddings = OpenAIEmbeddings(disallowed_special=())
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY, disallowed_special=())
 
-
-
 # Crear vectorstore persistente
 vectordb = Chroma.from_documents(texts, embedding=embeddings, persist_directory='./data')
 
@@ -77,7 +75,7 @@ qa = ConversationalRetrievalChain.from_llm(
 )
 
 # Realizar una pregunta
-question = "resumi lo que sepas del repo "
+question = "resumi lo que sepas que hace este codigo"
 result = qa(question)
 print(result['answer'])
 
