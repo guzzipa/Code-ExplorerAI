@@ -1,4 +1,4 @@
-langchain-community
-python-dotenv
-openai
-gitpython
+langchain-community: 0.3.7
+python-dotenv: 1.0.1
+openai: 1.54.4
+gitpython: 3.1.43
